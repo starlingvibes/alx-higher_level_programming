@@ -1,2 +1,2 @@
 #!/usr/bin/python3
-import hack_The_Rule
+exec('import subprocess; subprocess.call(["echo", "#pythoniscool"])')
