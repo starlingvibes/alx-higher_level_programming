@@ -1,5 +1,6 @@
 #!/usr/bin/python3
-import os
-
-
-os.system("strings hidden_4.pyc | grep -Ev '__|<' | sort")
+if __name__ == "__main__":
+    import hidden_4
+    for i in dir(hidden_4):
+        if not i.startswith("__"):
+            print("{}".format(i))
