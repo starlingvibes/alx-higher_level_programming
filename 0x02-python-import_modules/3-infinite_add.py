@@ -4,8 +4,7 @@ if __name__ == "__main__":
 
     num = len(argv)
     result = 0
-
     if num > 1:
         for i in range(1, num):
-            result += int(argv[i]
+            result += int(argv[i])
     print("{:d}".format(result))
