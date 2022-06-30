@@ -1,4 +1,4 @@
 from add_0 import add
 
 
-print(add(1, 2))
+print(f"{add(1, 2)}")
