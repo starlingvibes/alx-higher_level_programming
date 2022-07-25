@@ -49,17 +49,15 @@ class Rectangle:
         return 2 * (self.__width + self.__height)
 
     @staticmethod
-    """Return the rectangle with greater area"""
     def bigger_or_equal(rect_1, rect_2):
         if not isinstance(rect_1, Rectangle):
             raise TypeError("rect_1 must be an instance of Rectangle")
         if not isinstance(rect_2, Rectangle):
             raise TypeError("rect_2 must be an instance of Rectangle")
         return rect_1 if rect_1.area() >= rect_2.area() else rect_2
-
+    
     @classmethod
     def square(cls, size=0):
-        """Return a new rectangle with width == height == size"""
         return (cls(size, size))
 
     def __str__(self):
