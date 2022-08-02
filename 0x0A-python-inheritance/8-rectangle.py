@@ -23,7 +23,7 @@ class Rectangle(BaseGeometry):
     A class inheriting from the BaseGeometry class
     """
     def __init__(self, width, height):
-        """ 
+        """
         Class constructor with private attributes
         """
         self.integer_validator("width", width)
