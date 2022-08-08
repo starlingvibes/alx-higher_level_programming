@@ -18,8 +18,6 @@ class Base:
         - id: id of the instance
         """
 
-        if type(id) != int and id is not None:
-            raise TypeError("id must be an integer")
         if id is not None:
             self.id = id
         else:
