@@ -6,17 +6,16 @@ def find_peak(list_of_integers):
     """Finds a peak in list_of_integers"""
     if list_of_integers is None or len(list_of_integers) == 0:
         return None
-    lo = 0
-    hi = len(list_of_integers)
-    mid = int(((hi - lo) // 2) + lo)
-    if hi == 1:
-        return list_of_integers[0]
-    if hi == 2:
-        return max(list_of_integers)
-    if list_of_integers[mid] >= list_of_integers[mid - 1] and\
-            list_of_integers[mid] >= list_of_integers[mid + 1]:
-        return list_of_integers[mid]
-    if mid > 0 and list_of_integers[mid] < list_of_integers[mid + 1]:
-        return find_peak(list_of_integers[mid:])
-    if mid > 0 and list_of_integers[mid] < list_of_integers[mid - 1]:
-        return find_peak(list_of_integers[:mid])
+    n = len(list_of_integers)
+    nums = list_of_integers
+    left, right = 0, n - 1
+    while left <= right:
+        mid = (left + right) // 2
+        if ((mid == n - 1 or nums[mid] > nums[mid + 1]) and
+                (mid == 0 or nums[mid] > nums[mid - 1])):
+            return nums[mid]
+        elif ((mid == n - 1 or nums[mid] < nums[mid + 1]) and
+                (mid == 0 or nums[mid] > nums[mid - 1])):
+            left = mid + 1
+        else:
+            right = mid - 1
